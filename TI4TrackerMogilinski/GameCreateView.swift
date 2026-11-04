@@ -203,7 +203,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity4){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                 var dieInAHole = AppData.shared.factList[i].factionName
+                                Button("\(dieInAHole)"){
                                     stringity4 = AppData.shared.factList[i].factionName
                                     creator4 = AppData.shared.factList[i]
                                 }
@@ -249,7 +250,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity5){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                let iHateSwift = AppData.shared.factList[i].factionName
+                                Button("\(iHateSwift)"){
                                     stringity5 = AppData.shared.factList[i].factionName
                                     creator5 = AppData.shared.factList[i]
                                 }
@@ -292,7 +294,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity6){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                var blah = AppData.shared.factList[i].factionName
+                                Button("\(blah)"){
                                     stringity6 = AppData.shared.factList[i].factionName
                                     creator6 = AppData.shared.factList[i]
                                 }
@@ -381,7 +384,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity8){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                var tree = AppData.shared.factList[i].factionName
+                                Button("\(tree)"){
                                     stringity8 = AppData.shared.factList[i].factionName
                                     creator8 = AppData.shared.factList[i]
                                 }
