@@ -48,12 +48,29 @@ struct GameCreateView: View {
         
         ScrollView{
             VStack {
-                Text("TI4 Stat Tracker Game Creation Menu")
-                    .font(.custom("SLIDER", size: 42))
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.blue)
-                    .padding()
+                ZStack{
+                    
+                    Text("TI4 Stat Tracker")
+                        .font(.custom("SLIDER", size: 43))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.black)
+                        .padding()
+                    Text("TI4 Stat Tracker")
+                        .font(.custom("SLIDER", size: 42))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.blue)
+                        .padding()
+//                    Text("TI4 Stat Tracker Game Creation Menu")
+//                        .font(.custom("SLIDER", size: 42))
+//                        .bold()
+//                        .multilineTextAlignment(.center)
+//                        .foregroundStyle(.blue)
+//                        .padding()
+                }
+                
+                
                 
                 Text("Go through and select the faction names and colors correlating to your game, select the N/A option if you have extra player slots at the end. Imperative to put players starting lowest and not skipping any.")
                     .font(.custom("SLIDER", size: 24))
@@ -85,7 +102,7 @@ struct GameCreateView: View {
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
-                            .padding(1)
+                            .padding(10)
                             
                             
                             Menu (color1){
@@ -129,7 +146,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color2){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -176,7 +193,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color3){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -203,7 +220,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity4){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                 var dieInAHole = AppData.shared.factList[i].factionName
+                                Button("\(dieInAHole)"){
                                     stringity4 = AppData.shared.factList[i].factionName
                                     creator4 = AppData.shared.factList[i]
                                 }
@@ -220,7 +238,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color4){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -249,7 +267,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity5){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                let iHateSwift = AppData.shared.factList[i].factionName
+                                Button("\(iHateSwift)"){
                                     stringity5 = AppData.shared.factList[i].factionName
                                     creator5 = AppData.shared.factList[i]
                                 }
@@ -266,7 +285,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color5){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -292,7 +311,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity6){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                var blah = AppData.shared.factList[i].factionName
+                                Button("\(blah)"){
                                     stringity6 = AppData.shared.factList[i].factionName
                                     creator6 = AppData.shared.factList[i]
                                 }
@@ -309,7 +329,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color6){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -355,7 +375,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color7){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -381,7 +401,8 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity8){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                Button("\(AppData.shared.factList[i].factionName)"){
+                                var tree = AppData.shared.factList[i].factionName
+                                Button("\(tree)"){
                                     stringity8 = AppData.shared.factList[i].factionName
                                     creator8 = AppData.shared.factList[i]
                                 }
@@ -398,7 +419,7 @@ struct GameCreateView: View {
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
-                        .padding(1)
+                        .padding(10)
                         
                         Menu (color8){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
@@ -474,7 +495,7 @@ struct GameCreateView: View {
                 .padding(1)
                 
                 Button("Record Game"){
-                    gameStore.append(Game(faction1: creator1, color1: color1, faction2: creator2, color2: color2, faction3: creator3, color3: color3, faction4: creator4, color4: color4, faction5: creator5, color5: color5, faction6: creator6, color6: color6, faction7: creator7, color7: color7, faction8: creator8, color8: color8, winner: winning))
+                    gameStore.games.append(Game(faction1: creator1, color1: color1, faction2: creator2, color2: color2, faction3: creator3, color3: color3, faction4: creator4, color4: color4, faction5: creator5, color5: color5, faction6: creator6, color6: color6, faction7: creator7, color7: color7, faction8: creator8, color8: color8, winner: winning))
                     
                     
                 }
