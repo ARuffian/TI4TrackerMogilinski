@@ -1,10 +1,3 @@
-//
-//  AppData.swift
-//  TI4TrackerMogilinski
-//
-//  Created by AARON MOGILINSKI on 10/28/26.
-//
-
 import Foundation
 import SwiftUI
 
@@ -15,6 +8,7 @@ class AppData {
     static let shared = AppData()
     
     var goodPurple = Color(red: 117/255, green: 6/255, blue: 237/255)
+    var cyrano = Color(red: 12/255, green: 204/255, blue: 166/255)
     var colors = ["Red", "Blue", "Green", "Orange", "Pink", "Black", "Purple", "Yellow", "N/A"]
     var factList: [Faction] = [
         Faction(factionName: "The Arborec", factionWins: 0, factionLosses: 0, factionTotalUses: 0),

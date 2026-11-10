@@ -1,9 +1,4 @@
-//
-//  GameCreateView.swift
-//  TI4TrackerMogilinski
-//
-//  Created by AARON MOGILINSKI on 10/27/26.
-//
+
 
 import SwiftUI
 import SwiftData
@@ -50,34 +45,53 @@ struct GameCreateView: View {
             VStack {
                 ZStack{
                     
-                    Text("TI4 Stat Tracker")
-                        .font(.custom("SLIDER", size: 43))
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.black)
-                        .padding()
-                    Text("TI4 Stat Tracker")
-                        .font(.custom("SLIDER", size: 42))
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
-                        .padding()
-//                    Text("TI4 Stat Tracker Game Creation Menu")
+//                    Text("TI4 Stat Tracker")
+//                        .font(.custom("SLIDER", size: 42))
+//                        .bold()
+//                        .multilineTextAlignment(.center)
+//                        .foregroundStyle(.black)
+//                        .padding()
+//                        .offset(x: -7, y: 0)
+//                    Text("TI4 Stat Tracker")
 //                        .font(.custom("SLIDER", size: 42))
 //                        .bold()
 //                        .multilineTextAlignment(.center)
 //                        .foregroundStyle(.blue)
 //                        .padding()
+                    Text("TI4 Stat Tracker Game Creation Menu")
+                        .font(.custom("SLIDER", size: 42))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.black)
+                        .padding()
+                        .frame(width: 400)
+                        .offset(x: -7, y: 0)
+                    Text("TI4 Stat Tracker Game Creation Menu")
+                        .font(.custom("SLIDER", size: 42))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(AppData.shared.cyrano)
+                        .padding()
+                        .frame(width: 400)
                 }
-                
-                
-                
-                Text("Go through and select the faction names and colors correlating to your game, select the N/A option if you have extra player slots at the end. Imperative to put players starting lowest and not skipping any.")
-                    .font(.custom("SLIDER", size: 24))
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.blue)
-                    .padding(.bottom)
+                ZStack{
+                    Text("Go through and select the faction names and colors correlating to your game, select the N/A option if you have extra player slots at the end. Imperative to put players starting lowest and not skipping any.")
+                        .font(.custom("SLIDER", size: 24))
+                        
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.black)
+                        .padding(.bottom)
+                        .frame(width: 400)
+                        .offset(x: -4, y: 0)
+                    Text("Go through and select the faction names and colors correlating to your game, select the N/A option if you have extra player slots at the end. Imperative to put players starting lowest and not skipping any.")
+                        .font(.custom("SLIDER", size: 24))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(AppData.shared.cyrano)
+                        .padding(.bottom)
+                        .frame(width: 400)
+                }
                 
                 HStack{
                     ZStack{
@@ -89,37 +103,30 @@ struct GameCreateView: View {
                                         stringity1 = AppData.shared.factList[i].factionName
                                         creator1 = AppData.shared.factList[i]
                                     }
-                                    
-                                    
                                 }
-                                
                             }
                             .frame(width: 150)
                             .font(.custom("SLIDER", size: 24))
                             .bold()
                             .multilineTextAlignment(.center)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(AppData.shared.cyrano)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
                             .padding(10)
-                            
                             
                             Menu (color1){
                                 ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
                                     Button("\(AppData.shared.colors[i])"){
                                         color1 = AppData.shared.colors[i]
                                     }
-                                    
-                                    
                                 }
-                                
                             }
                             .font(.custom("SLIDER", size: 24))
                             .frame(width: 150)
                             .bold()
                             .multilineTextAlignment(.center)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(AppData.shared.cyrano)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -133,16 +140,13 @@ struct GameCreateView: View {
                                     stringity2 = AppData.shared.factList[i].factionName
                                     creator2 = AppData.shared.factList[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -153,17 +157,13 @@ struct GameCreateView: View {
                                 Button("\(AppData.shared.colors[i])"){
                                     color2 = AppData.shared.colors[i]
                                 }
-                                
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -189,7 +189,7 @@ struct GameCreateView: View {
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -197,20 +197,16 @@ struct GameCreateView: View {
                         
                         Menu (color3){
                             ForEach(0..<AppData.shared.colors.count, id: \.self) { i in
-                                let screwyou = AppData.shared.colors[i]
-                                Button("\(screwyou)"){
+                                Button("\(AppData.shared.colors[i])"){
                                     color3 = AppData.shared.colors[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -220,21 +216,17 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity4){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                 var dieInAHole = AppData.shared.factList[i].factionName
-                                Button("\(dieInAHole)"){
+                                Button("\(AppData.shared.factList[i].factionName)"){
                                     stringity4 = AppData.shared.factList[i].factionName
                                     creator4 = AppData.shared.factList[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -245,16 +237,13 @@ struct GameCreateView: View {
                                 Button("\(AppData.shared.colors[i])"){
                                     color4 = AppData.shared.colors[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -267,21 +256,17 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity5){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                let iHateSwift = AppData.shared.factList[i].factionName
-                                Button("\(iHateSwift)"){
+                                Button("\(AppData.shared.factList[i].factionName)"){
                                     stringity5 = AppData.shared.factList[i].factionName
                                     creator5 = AppData.shared.factList[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -292,16 +277,13 @@ struct GameCreateView: View {
                                 Button("\(AppData.shared.colors[i])"){
                                     color5 = AppData.shared.colors[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -311,21 +293,17 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity6){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                var blah = AppData.shared.factList[i].factionName
-                                Button("\(blah)"){
+                                Button("\(AppData.shared.factList[i].factionName)"){
                                     stringity6 = AppData.shared.factList[i].factionName
                                     creator6 = AppData.shared.factList[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -336,16 +314,13 @@ struct GameCreateView: View {
                                 Button("\(AppData.shared.colors[i])"){
                                     color6 = AppData.shared.colors[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -362,16 +337,13 @@ struct GameCreateView: View {
                                     stringity7 = AppData.shared.factList[i].factionName
                                     creator7 = AppData.shared.factList[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -382,16 +354,13 @@ struct GameCreateView: View {
                                 Button("\(AppData.shared.colors[i])"){
                                     color7 = AppData.shared.colors[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -401,21 +370,17 @@ struct GameCreateView: View {
                     VStack{
                         Menu (stringity8){
                             ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-                                var tree = AppData.shared.factList[i].factionName
-                                Button("\(tree)"){
+                                Button("\(AppData.shared.factList[i].factionName)"){
                                     stringity8 = AppData.shared.factList[i].factionName
                                     creator8 = AppData.shared.factList[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -426,16 +391,13 @@ struct GameCreateView: View {
                                 Button("\(AppData.shared.colors[i])"){
                                     color8 = AppData.shared.colors[i]
                                 }
-                                
-                                
                             }
-                            
                         }
                         .font(.custom("SLIDER", size: 24))
                         .frame(width: 150)
                         .bold()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(AppData.shared.cyrano)
                         .padding(.horizontal)
                         .background(.black)
                         .cornerRadius(45)
@@ -443,13 +405,19 @@ struct GameCreateView: View {
                     }
                 }
                 .padding()
-                
-                Text("Winner:")
-                    .font(.custom("SLIDER", size: 24))
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.blue)
-                    
+                ZStack{
+                    Text("Winner:")
+                        .font(.custom("SLIDER", size: 24))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.black)
+                        .offset(x: -4, y: 0)
+                    Text("Winner:")
+                        .font(.custom("SLIDER", size: 24))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(AppData.shared.cyrano)
+                }
                 Menu("\(winnerFill)"){
                     Button("Player 1"){
                         winnerFill = "Player 1"
@@ -488,7 +456,7 @@ struct GameCreateView: View {
                 .font(.custom("SLIDER", size: 24))
                 .bold()
                 .multilineTextAlignment(.center)
-                .foregroundStyle(.blue)
+                .foregroundStyle(AppData.shared.cyrano)
                 .padding(.horizontal)
                 .background(.black)
                 .cornerRadius(45)
@@ -496,23 +464,17 @@ struct GameCreateView: View {
                 
                 Button("Record Game"){
                     gameStore.games.append(Game(faction1: creator1, color1: color1, faction2: creator2, color2: color2, faction3: creator3, color3: color3, faction4: creator4, color4: color4, faction5: creator5, color5: color5, faction6: creator6, color6: color6, faction7: creator7, color7: color7, faction8: creator8, color8: color8, winner: winning))
-                    
-                    
                 }
                 .frame(width: 150)
                 .font(.custom("SLIDER", size: 24))
                 .bold()
                 .multilineTextAlignment(.center)
-                .foregroundStyle(.blue)
+                .foregroundStyle(AppData.shared.cyrano)
                 .padding(.horizontal)
                 .background(.black)
                 .cornerRadius(45)
                 .padding(10)
-                
-                
-            }
-            
-            
+            }    
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(AppData.shared.goodPurple)
