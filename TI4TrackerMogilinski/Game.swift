@@ -1,13 +1,5 @@
-//
-//  Game.swift
-//  TI4TrackerMogilinski
-//
-//  Created by AARON MOGILINSKI on 10/26/26.
-//
-
 import Foundation
 import SwiftData
-
 @Model
 class Game {
     

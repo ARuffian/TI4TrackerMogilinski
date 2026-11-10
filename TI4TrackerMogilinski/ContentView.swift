@@ -1,62 +1,44 @@
-//
-//  ContentView.swift
-//  TI4TrackerMogilinski
-//
-//  Created by AARON MOGILINSKI on 10/26/26.
-//
-
 import SwiftUI
 import SwiftData
-
 struct ContentView: View {
     @Environment(\.modelContext) var context
     
     @Environment(GameStore.self) private var gameStore
-    
-   // @Query var factions: [Faction]
-    
-   
     @State var falser = true
     @State var limit = "Factions"
     @State var gamer: Game? = nil
     
     var body: some View {
-        
-        
-        
-        
-        
-        
-        
         NavigationStack {
         VStack {
-            
-            
-            
-            
-            Text("Twilight Imperium 4th Edition Stat Tracker")
-                .font(.custom("SLIDER", size: 42))
-            
-                .bold()
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.blue)
-                .padding()
-            Text("No more Arguing over who won when, now you'll know!")
-                .font(.custom("SLIDER", size: 24))
-                .foregroundStyle(.blue)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 100)
-            
-//            Menu (limit){
-//                ForEach(0..<AppData.shared.factList.count, id: \.self) { i in
-//                    Button("\(AppData.shared.factList[i].factionName)"){
-//                        limit = AppData.shared.factList[i].factionName
-//                    }
-//                    
-//                   
-//                }
-//                
-//            }
+            ZStack{
+                Text("Twilight Imperium 4th Edition Stat Tracker")
+                    .font(.custom("SLIDER", size: 42))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.black)
+                    .padding()
+                    .offset(x: -5)
+                Text("Twilight Imperium 4th Edition Stat Tracker")
+                    .font(.custom("SLIDER", size: 42))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(AppData.shared.cyrano)
+                    .padding()
+            }
+            ZStack{
+                Text("No more Arguing over who won when, now you'll know!")
+                    .font(.custom("SLIDER", size: 24))
+                    .foregroundStyle(.black)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 100)
+                    .offset(x: -5)
+                Text("No more Arguing over who won when, now you'll know!")
+                    .font(.custom("SLIDER", size: 24))
+                    .foregroundStyle(AppData.shared.cyrano)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 100)
+            }
             VStack{
                 HStack{
                     NavigationLink {
@@ -90,8 +72,6 @@ struct ContentView: View {
                     
                     
                 }
-                // new nav stack here
-                
             }
             
             
@@ -104,7 +84,6 @@ struct ContentView: View {
     
     
 }
-
 #Preview {
     ContentView()
 }

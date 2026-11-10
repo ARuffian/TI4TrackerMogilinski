@@ -1,25 +1,26 @@
-//
-//  GameView.swift
-//  TI4TrackerMogilinski
-//
-//  Created by AARON MOGILINSKI on 10/27/26.
-//
-
 import SwiftUI
 import SwiftData
-
 struct GameView: View {
     
     @Environment(GameStore.self) private var gameStore
     
     var body: some View {
         VStack{
-            Text("Game History")
-                .font(.custom("SLIDER", size: 42))
-                .bold()
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.blue)
-                .padding()
+            ZStack{
+                Text("Game History")
+                    .font(.custom("SLIDER", size: 42))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.black)
+                    .padding()
+                    .offset(x: -5)
+                Text("Game History")
+                    .font(.custom("SLIDER", size: 42))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(AppData.shared.cyrano)
+                    .padding()
+            }
             ForEach(gameStore.games, id: \.self) { game in
                 VStack {
                     Text("Winner: \(game.winner.factionName)")
@@ -39,7 +40,7 @@ struct GameView: View {
                 .font(.custom("SLIDER", size: 16))
                 .foregroundStyle(.blue)
                 .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity)
                 .background(.black)
                 .cornerRadius(45)
                 
@@ -50,7 +51,6 @@ struct GameView: View {
         
     }
 }
-
 #Preview {
     GameView()
 }
