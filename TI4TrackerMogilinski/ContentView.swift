@@ -3,6 +3,9 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) var context
     
+    @Query var gameStorage: [Game]
+    
+    
     @Environment(GameStore.self) private var gameStore
     @State var falser = true
     @State var limit = "Factions"

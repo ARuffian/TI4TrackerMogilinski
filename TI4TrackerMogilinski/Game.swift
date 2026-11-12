@@ -3,6 +3,7 @@ import SwiftData
 @Model
 class Game {
     
+    var namer: String
     var faction1: Faction
     var color1: String
     var faction2: Faction
@@ -21,7 +22,8 @@ class Game {
     var color8: String
     var winner: Faction
     
-    init(faction1: Faction, color1: String, faction2: Faction, color2: String, faction3: Faction, color3: String, faction4: Faction, color4: String, faction5: Faction, color5: String, faction6: Faction, color6: String, faction7: Faction, color7: String, faction8: Faction, color8: String, winner: Faction) {
+    init(namer: String, faction1: Faction, color1: String, faction2: Faction, color2: String, faction3: Faction, color3: String, faction4: Faction, color4: String, faction5: Faction, color5: String, faction6: Faction, color6: String, faction7: Faction, color7: String, faction8: Faction, color8: String, winner: Faction) {
+        self.namer = namer
         self.faction1 = faction1
         self.color1 = color1
         self.faction2 = faction2
