@@ -4,8 +4,10 @@ import SwiftUI
 class AppData {
     static let shared = AppData()
     
-    var goodPurple = Color(red: 117/255, green: 6/255, blue: 237/255)
-    var cyrano = Color(red: 12/255, green: 204/255, blue: 166/255)
+     var goodPurple = Color(red: 145/255, green: 10/255, blue: 194/255)
+    // var goodPurple = Color(red: 110/255, green: 110/255, blue: 110/255)
+     var cyrano = Color(red: 15/255, green: 240/255, blue: 195/255)
+    // var cyrano = Color(red: 240/255, green: 156/255, blue: 15/255)
     var colors = ["Red", "Blue", "Green", "Orange", "Pink", "Black", "Purple", "Yellow", "N/A"]
     var factList: [Faction] = [
         Faction(factionName: "The Arborec", factionWins: 0, factionLosses: 0, factionTotalUses: 0),

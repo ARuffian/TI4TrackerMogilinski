@@ -30,6 +30,16 @@ struct GameCreateView: View {
     
     @State var winning: Faction = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
     
+    @State var day = 0
+    @State var month = 0
+    @State var year = 0
+    
+    @State var days = "Day"
+    @State var months = "Month"
+    @State var years = "Year"
+    
+    @State var playerCount = 3
+    
     
     @Environment(GameStore.self) private var gameStore
     
@@ -37,7 +47,7 @@ struct GameCreateView: View {
     
     @Query var gameStorage: [Game]
     
-    @State var playerCount = 0
+    
     
     
     
@@ -104,12 +114,6 @@ struct GameCreateView: View {
                         .foregroundStyle(.black)
                         .offset(x: -4, y: 0)
                     Menu("\(playerCount)"){
-                        Button("1"){
-                            playerCount = 1
-                        }
-                        Button("2"){
-                            playerCount = 2
-                        }
                         Button("3"){
                             playerCount = 3
                         }
@@ -134,6 +138,7 @@ struct GameCreateView: View {
                     .bold()
                     .multilineTextAlignment(.center)
                     .foregroundStyle(AppData.shared.cyrano)
+                    .padding(.vertical, 9)
                     .padding(.horizontal)
                     .background(.black)
                     .cornerRadius(45)
@@ -158,6 +163,79 @@ struct GameCreateView: View {
                     .font(.custom("SLIDER", size: 18))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(AppData.shared.cyrano)
+                    
+                
+                ZStack{
+                    Text("Date of game: ")
+                        .font(.custom("SLIDER", size: 24))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.black)
+                        .offset(x: -4, y: 0)
+                    
+                    Text("Date of game: ")
+                        .font(.custom("SLIDER", size: 24))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(AppData.shared.cyrano)
+                }
+                HStack{
+                    Menu("\(months)"){
+                        ForEach(1...12, id: \.self){ i in
+                            Button("\(i)"){
+                                month = i
+                                let temp = "\(i)"
+                                months = temp
+                            }
+                        }
+                    }
+                    .font(.custom("SLIDER", size: 18))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(AppData.shared.cyrano)
+                    .padding(.vertical, 9)
+                    .padding(.horizontal)
+                    .background(.black)
+                    .cornerRadius(45)
+                    Text("/")
+                    Menu("\(days)"){
+                        ForEach(1...31, id: \.self){ i in
+                            Button("\(i)"){
+                                day = i
+                                let temp = "\(i)"
+                                days = temp
+                            }
+                        }
+                    }
+                    .font(.custom("SLIDER", size: 18))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(AppData.shared.cyrano)
+                    .padding(.vertical, 9)
+                    .padding(.horizontal)
+                    .background(.black)
+                    .cornerRadius(45)
+                    Text("/")
+                    Menu("\(years)"){
+                        ForEach(1997...2026, id: \.self){ i in
+                            Button("\(i)"){
+                                year = i
+                                let temp = "\(i)"
+                                years = temp
+                            }
+                        }
+                    }
+                    
+                }
+                .font(.custom("SLIDER", size: 18))
+                .bold()
+                .multilineTextAlignment(.center)
+                .foregroundStyle(AppData.shared.cyrano)
+                .padding(.vertical, 9)
+                .padding(.horizontal)
+                .background(.black)
+                .cornerRadius(45)
+                
                 HStack{
                     ZStack{
                         
@@ -176,6 +254,7 @@ struct GameCreateView: View {
                                 .bold()
                                 .multilineTextAlignment(.center)
                                 .foregroundStyle(AppData.shared.cyrano)
+                                .padding(.vertical, 9)
                                 .padding(.horizontal)
                                 .background(.black)
                                 .cornerRadius(45)
@@ -193,6 +272,7 @@ struct GameCreateView: View {
                                 .bold()
                                 .multilineTextAlignment(.center)
                                 .foregroundStyle(AppData.shared.cyrano)
+                                .padding(.vertical, 9)
                                 .padding(.horizontal)
                                 .background(.black)
                                 .cornerRadius(45)
@@ -218,6 +298,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -235,6 +316,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -266,6 +348,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -283,6 +366,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -308,6 +392,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -325,6 +410,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -352,6 +438,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -369,6 +456,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -393,6 +481,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -410,6 +499,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -437,6 +527,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -454,6 +545,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -478,6 +570,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -495,6 +588,7 @@ struct GameCreateView: View {
                             .bold()
                             .multilineTextAlignment(.center)
                             .foregroundStyle(AppData.shared.cyrano)
+                            .padding(.vertical, 9)
                             .padding(.horizontal)
                             .background(.black)
                             .cornerRadius(45)
@@ -558,6 +652,7 @@ struct GameCreateView: View {
                 .bold()
                 .multilineTextAlignment(.center)
                 .foregroundStyle(AppData.shared.cyrano)
+                .padding(.vertical, 9)
                 .padding(.horizontal)
                 .background(.black)
                 .cornerRadius(45)
@@ -565,7 +660,47 @@ struct GameCreateView: View {
                 
                 Button("Record Game"){
 //                    gameStore.games.append(Game(namer: namer, faction1: creator1, color1: color1, faction2: creator2, color2: color2, faction3: creator3, color3: color3, faction4: creator4, color4: color4, faction5: creator5, color5: color5, faction6: creator6, color6: color6, faction7: creator7, color7: color7, faction8: creator8, color8: color8, winner: winning))
-                    context.insert(Game(namer: namer, faction1: creator1, color1: color1, faction2: creator2, color2: color2, faction3: creator3, color3: color3, faction4: creator4, color4: color4, faction5: creator5, color5: color5, faction6: creator6, color6: color6, faction7: creator7, color7: color7, faction8: creator8, color8: color8, winner: winning))
+                    context.insert(Game(namer: namer, day: day, month: month, year: year, players: playerCount, faction1: creator1, color1: color1, faction2: creator2, color2: color2, faction3: creator3, color3: color3, faction4: creator4, color4: color4, faction5: creator5, color5: color5, faction6: creator6, color6: color6, faction7: creator7, color7: color7, faction8: creator8, color8: color8, winner: winning))
+                    
+                     namer = ""
+                     stringity1 = "Faction 1"
+                     color1 = "N/A"
+                     creator1 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity2 = "Faction 2"
+                     color2 = "N/A"
+                     creator2 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity3 = "Faction 3"
+                     color3 = "N/A"
+                     creator3 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity4 = "Faction 4"
+                     color4 = "N/A"
+                     creator4 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity5 = "Faction 5"
+                     color5 = "N/A"
+                     creator5 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity6 = "Faction 6"
+                     color6 = "N/A"
+                     creator6 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity7 = "Faction 7"
+                     color7 = "N/A"
+                     creator7 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     stringity8 = "Faction 8"
+                     color8 = "N/A"
+                     creator8 = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                     winnerFill = "Who won?"
+                    
+                     winning = Faction(factionName: "N/A", factionWins: 0, factionLosses: 0, factionTotalUses: 0)
+                    
+                     day = 0
+                     month = 0
+                     year = 0
+                    
+                     days = "Day"
+                     months = "Month"
+                     years = "Year"
+                    
+                     playerCount = 3
+                    
                     
                     
                 }
@@ -574,6 +709,7 @@ struct GameCreateView: View {
                 .bold()
                 .multilineTextAlignment(.center)
                 .foregroundStyle(AppData.shared.cyrano)
+                .padding(.vertical, 9)
                 .padding(.horizontal)
                 .background(.black)
                 .cornerRadius(45)

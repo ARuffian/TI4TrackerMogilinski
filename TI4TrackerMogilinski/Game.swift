@@ -21,8 +21,16 @@ class Game {
     var faction8: Faction
     var color8: String
     var winner: Faction
+    var day: Int
+    var month: Int
+    var year: Int
+    var players: Int
     
-    init(namer: String, faction1: Faction, color1: String, faction2: Faction, color2: String, faction3: Faction, color3: String, faction4: Faction, color4: String, faction5: Faction, color5: String, faction6: Faction, color6: String, faction7: Faction, color7: String, faction8: Faction, color8: String, winner: Faction) {
+    init(namer: String, day: Int, month: Int, year: Int, players: Int, faction1: Faction, color1: String, faction2: Faction, color2: String, faction3: Faction, color3: String, faction4: Faction, color4: String, faction5: Faction, color5: String, faction6: Faction, color6: String, faction7: Faction, color7: String, faction8: Faction, color8: String, winner: Faction) {
+        self.players = players
+        self.day = day
+        self.month = month
+        self.year = year
         self.namer = namer
         self.faction1 = faction1
         self.color1 = color1
